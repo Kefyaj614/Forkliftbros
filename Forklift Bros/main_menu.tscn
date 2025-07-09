@@ -1,0 +1,133 @@
+[gd_scene load_steps=12 format=3 uid="uid://dtt2g0j52powd"]
+
+[ext_resource type="Script" path="res://VBoxContainer.gd" id="1_amjms"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_bq7h7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8sk87"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_6vnwq"]
+sky_material = SubResource("ProceduralSkyMaterial_8sk87")
+
+[sub_resource type="Environment" id="Environment_03qar"]
+background_mode = 2
+sky = SubResource("Sky_6vnwq")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktafq"]
+albedo_color = Color(0.521569, 0.843137, 0.423529, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_krvfw"]
+material = SubResource("StandardMaterial3D_ktafq")
+size = Vector2(30, 30)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8xura"]
+data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_68hv1"]
+albedo_color = Color(0.258824, 0.611765, 0.976471, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xwgw3"]
+albedo_color = Color(0.913725, 0.160784, 0.482353, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3w5t"]
+albedo_color = Color(0.956863, 0.768627, 0.152941, 1)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_bq7h7")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_03qar")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_krvfw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_8xura")
+
+[node name="Enviroment" type="Node3D" parent="."]
+
+[node name="wall 1" type="CSGBox3D" parent="Enviroment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.71559, 14.9773)
+use_collision = true
+size = Vector3(29.81, 5.15687, 0.447511)
+
+[node name="wall 2" type="CSGBox3D" parent="Enviroment"]
+transform = Transform3D(0.0401318, 0, -0.999194, 0, 1, 0, 0.999194, 0, 0.0401318, 14.9273, 2.50423, 0.206591)
+use_collision = true
+size = Vector3(29.81, 5.15687, 0.447511)
+
+[node name="wall 3" type="CSGBox3D" parent="Enviroment"]
+transform = Transform3D(0.0401318, 0, -0.999194, 0, 1, 0, 0.999194, 0, 0.0401318, -14.3687, 2.83092, -0.15465)
+use_collision = true
+size = Vector3(29.81, 5.15687, 0.447511)
+
+[node name="wall 4" type="CSGBox3D" parent="Enviroment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.53371, -15.0368)
+use_collision = true
+size = Vector3(29.81, 5.15687, 0.447511)
+
+[node name="Big Box" type="CSGBox3D" parent="Enviroment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.07536, 1.44816, -0.0931055)
+material_override = SubResource("StandardMaterial3D_68hv1")
+use_collision = true
+size = Vector3(5, 3.5, 5)
+
+[node name="Med Box" type="CSGBox3D" parent="Enviroment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7697, 1.16265, 6.38578)
+material_override = SubResource("StandardMaterial3D_xwgw3")
+use_collision = true
+size = Vector3(2.47334, 2.09609, 2.49892)
+
+[node name="Small box" type="CSGBox3D" parent="Enviroment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.29361, 0.622039, 11.7569)
+material_override = SubResource("StandardMaterial3D_a3w5t")
+use_collision = true
+size = Vector3(1.16065, 1.13969, 1.17381)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -68.5
+offset_right = 73.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_amjms")
+
+[node name="NewGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "New Game"
+
+[node name="LoadGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Load Game"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+
+[node name="CameraPivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.877423, 0.479718, 0, -0.479718, 0.877423, 0, 13.8308, 19.7637)
+
+[connection signal="pressed" from="VBoxContainer/NewGameButton" to="VBoxContainer" method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="VBoxContainer" method="_on_quit_button_pressed"]
