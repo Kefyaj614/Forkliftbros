@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl5vw1ahs15da"]
+[gd_scene load_steps=5 format=3 uid="uid://dl5vw1ahs15da"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_tern3"]
+[ext_resource type="Script" path="res://Interation/PlayerInteractionHandler.gd" id="2_gkwrx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2n3it"]
 
@@ -21,11 +22,13 @@ shape = SubResource("ConvexPolygonShape3D_nhh16")
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.590776, -0.0705649)
+script = ExtResource("2_gkwrx")
 
 [node name="HeadCamera" type="Camera3D" parent="Head"]
 
-[node name="RayCast3D" type="RayCast3D" parent="Head/HeadCamera"]
-transform = Transform3D(1, 0, 0, 0, 0.0677219, 0, 0, 0, -116.217, 0.00356784, -0.061992, -0.358153)
+[node name="HandReach" type="RayCast3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.72529e-08)
+target_position = Vector3(0, 0, -5)
 
 [node name="Sky" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.863087, 0.505055, 0, -0.505055, 0.863087, 0, 3.08973, 2.29338)
