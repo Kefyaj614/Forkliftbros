@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://g7yjywculqgu"
+path="res://.godot/imported/character-employee.obj-22b2f9e56a6deca7f90ad078c536d33d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/character-employee.obj-22b2f9e56a6deca7f90ad078c536d33d.mesh"]
+
+source_file="res://resources/Models/Models/OBJ format/character-employee.obj"
+dest_files=["res://.godot/imported/character-employee.obj-22b2f9e56a6deca7f90ad078c536d33d.mesh", "res://.godot/imported/character-employee.obj-22b2f9e56a6deca7f90ad078c536d33d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

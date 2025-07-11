@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cogf1blbr1m48"
+path="res://.godot/imported/freezers-standing.obj-f80420c1f2b25be03205182d6ca93ee7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/freezers-standing.obj-f80420c1f2b25be03205182d6ca93ee7.mesh"]
+
+source_file="res://resources/Models/Models/OBJ format/freezers-standing.obj"
+dest_files=["res://.godot/imported/freezers-standing.obj-f80420c1f2b25be03205182d6ca93ee7.mesh", "res://.godot/imported/freezers-standing.obj-f80420c1f2b25be03205182d6ca93ee7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

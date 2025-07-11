@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://rgixn4w4jq3f"
+path="res://.godot/imported/wall-door-rotate.obj-4981750db3a11ef446ffd1f45667c932.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-door-rotate.obj-4981750db3a11ef446ffd1f45667c932.mesh"]
+
+source_file="res://resources/Models/Models/OBJ format/wall-door-rotate.obj"
+dest_files=["res://.godot/imported/wall-door-rotate.obj-4981750db3a11ef446ffd1f45667c932.mesh", "res://.godot/imported/wall-door-rotate.obj-4981750db3a11ef446ffd1f45667c932.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
